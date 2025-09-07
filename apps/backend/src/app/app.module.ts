@@ -3,7 +3,6 @@ import { ConfigModule, ConfigService } from "@nestjs/config";
 import { ServeStaticModule } from "@nestjs/serve-static";
 import { join } from "path";
 import { MongooseModule } from "@nestjs/mongoose";
-import { ScheduleModule } from "@nestjs/schedule";
 import { TaskModule } from "./infrastructure/tasks/task.module";
 
 @Module({
@@ -14,7 +13,7 @@ import { TaskModule } from "./infrastructure/tasks/task.module";
     ConfigModule.forRoot({
       isGlobal: true,
     }),
-    ScheduleModule.forRoot(),
+    // ScheduleModule.forRoot(),
     TaskModule,
     MongooseModule.forRootAsync({
       imports: [ConfigModule],

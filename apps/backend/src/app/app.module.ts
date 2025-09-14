@@ -4,6 +4,7 @@ import { ServeStaticModule } from "@nestjs/serve-static";
 import { join } from "path";
 import { MongooseModule } from "@nestjs/mongoose";
 import { TaskModule } from "./infrastructure/tasks/task.module";
+import { AccountModule } from "./modules/account/account.module";
 
 @Module({
   imports: [
@@ -14,6 +15,7 @@ import { TaskModule } from "./infrastructure/tasks/task.module";
       isGlobal: true,
     }),
     // ScheduleModule.forRoot(),
+    AccountModule,
     TaskModule,
     MongooseModule.forRootAsync({
       imports: [ConfigModule],

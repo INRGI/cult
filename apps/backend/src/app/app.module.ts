@@ -14,7 +14,6 @@ import { AccountModule } from "./modules/account/account.module";
     ConfigModule.forRoot({
       isGlobal: true,
     }),
-    // ScheduleModule.forRoot(),
     AccountModule,
     TaskModule,
     MongooseModule.forRootAsync({

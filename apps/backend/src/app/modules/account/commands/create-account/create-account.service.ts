@@ -8,8 +8,8 @@ export class CreateAccountService {
   constructor(private readonly accountRepository: AccountRepository) {}
 
   public async execute(payload: CreateAccountPayload): Promise<Account> {
-    const broadcastRules = await this.accountRepository.create(payload);
+    const account = await this.accountRepository.create(payload);
 
-    return broadcastRules;
+    return account;
   }
 }

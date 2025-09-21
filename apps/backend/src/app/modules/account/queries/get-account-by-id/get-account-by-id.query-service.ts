@@ -1,7 +1,7 @@
 import { Injectable } from "@nestjs/common";
-import { AccountRepository } from "../../../infrastructure/database/repositories/account/account.repository";
+import { AccountRepository } from "../../../../infrastructure/database/repositories/account/account.repository";
 import { GetAccountByIdPayload } from "./get-account-by-id.payload";
-import { AccountProps } from "../domain/types/account.types";
+import { AccountProps } from "../../domain/types/account.types";
 
 @Injectable()
 export class GetAccountByIdQueryService {

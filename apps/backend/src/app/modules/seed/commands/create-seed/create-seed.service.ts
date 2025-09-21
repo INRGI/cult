@@ -1,5 +1,5 @@
 import { Injectable } from "@nestjs/common";
-import { SeedRepository } from "../../../../infrastructure/database/repositories/Seed/Seed.repository";
+import { SeedRepository } from "../../../../infrastructure/database/repositories/seed/seed.repository";
 import { Seed } from "../../../../infrastructure/database/schemas/seed.schema";
 import { CreateSeedPayload } from "./create-seed.payload";
 

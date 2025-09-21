@@ -4,6 +4,7 @@ import {
   queryProviders,
   serviceProviders,
 } from "./seed.providers";
+import { SeedRepositoryModule } from "../../infrastructure/database/repositories/seed/seed.repository.module";
 
 @Module({
   imports: [SeedRepositoryModule],

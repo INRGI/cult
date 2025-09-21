@@ -1,7 +1,7 @@
 import { Injectable } from "@nestjs/common";
-import { SeedRepository } from "../../../../infrastructure/database/repositories/seed/seed.repository";
 import { UpdateSeedPayload } from "./update-seed.payload";
 import { UpdateSeedProps } from "../../domain/types/seed.types";
+import { SeedRepository } from "../../../../infrastructure/database/repositories/seed/seed.repository";
 
 @Injectable()
 export class UpdateSeedService {

@@ -11,6 +11,9 @@ export class Account {
   @Prop()
   name: string;
 
+  @Prop()
+  seeds: []
+
   @Prop({ default: false })
   isAdmin: boolean;
 }

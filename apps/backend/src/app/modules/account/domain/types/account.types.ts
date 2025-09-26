@@ -9,6 +9,5 @@ export type AccountProps = CreateAccountProps;
 export interface UpdateAccountProps {
   readonly name: string;
   readonly email: string;
-  readonly seeds: [];
   readonly isAdmin: boolean;
 }

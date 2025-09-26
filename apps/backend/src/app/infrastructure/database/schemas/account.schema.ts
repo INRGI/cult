@@ -1,5 +1,6 @@
 import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
 import { Document } from "mongoose";
+import { Seed } from "./seed.schema";
 
 export type AccountDocument = Account & Document;
 
@@ -10,9 +11,6 @@ export class Account {
 
   @Prop()
   name: string;
-
-  @Prop()
-  seeds: []
 
   @Prop({ default: false })
   isAdmin: boolean;

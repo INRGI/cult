@@ -5,6 +5,7 @@ import { join } from "path";
 import { MongooseModule } from "@nestjs/mongoose";
 import { TaskModule } from "./infrastructure/tasks/task.module";
 import { AccountModule } from "./modules/account/account.module";
+import { SeedModule } from "./modules/seed/seed.module";
 
 @Module({
   imports: [
@@ -15,6 +16,7 @@ import { AccountModule } from "./modules/account/account.module";
       isGlobal: true,
     }),
     AccountModule,
+    SeedModule,
     TaskModule,
     MongooseModule.forRootAsync({
       imports: [ConfigModule],

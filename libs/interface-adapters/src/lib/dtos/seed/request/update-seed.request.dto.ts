@@ -1,4 +1,5 @@
 import { IsOptional, IsString, Length } from "class-validator";
+import { Isp } from "../../../interfaces";
 
 export class UpdateSeedRequestDto {
   @IsString()
@@ -11,4 +12,7 @@ export class UpdateSeedRequestDto {
 
   @IsString()
   public ownerId: string;
+
+  @IsString()
+  public isp: Isp;
 }

@@ -10,6 +10,9 @@ export class Seed {
 
   @Prop({ required: true })
   ownerId: string;
+
+  @Prop({ required: true })
+  isp: string;
 }
 
 export const SeedSchema = SchemaFactory.createForClass(Seed);

@@ -1,3 +1,4 @@
+import { Isp } from "@epc-services/interface-adapters";
 import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
 import { Document } from "mongoose";
 
@@ -12,7 +13,7 @@ export class Seed {
   ownerId: string;
 
   @Prop({ required: true })
-  isp: string;
+  isp: Isp;
 }
 
 export const SeedSchema = SchemaFactory.createForClass(Seed);

@@ -11,7 +11,7 @@ export class UpdateSeedService {
     const seed = await this.seedRepository.findById(payload.id);
 
     if (!seed) {
-      throw new Error("Broadcast rules not found");
+      throw new Error("Seed not found");
     }
 
     const updatedSeed = await this.seedRepository.update(payload.id, {

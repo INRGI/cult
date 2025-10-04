@@ -13,7 +13,7 @@ export class UpdateAccountService {
     const Account = await this.accountRepository.findById(payload.id);
 
     if (!Account) {
-      throw new Error("Broadcast rules not found");
+      throw new Error("Account not found");
     }
 
     const updatedAccount = await this.accountRepository.update(payload.id, {

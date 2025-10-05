@@ -1,23 +1,20 @@
-// import { Navigate, Route, Routes } from "react-router-dom";
-// import { lazy } from "react";
+import { Navigate, Route, Routes } from "react-router-dom";
+import { lazy } from "react";
+import Layout from "../Layout/Layout";
 
-// const Home = lazy(
-//   () => import("../../pages/Home/Home")
-// );
+const Home = lazy(() => import("../../pages/Home/Home"));
 
 export function App() {
-  return <>HOME</>
-  // return (
-  //   <Routes>
-  //     <Route path="/" element={<Layout />}>
-  //       <Route index element={<Home />} />
+  return (
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Home />} />
 
-
-  //       {/* <Route path="/not-found" element={<NotFound />} /> */}
-  //       <Route path="*" element={<Navigate to="/not-found" replace />} />
-  //     </Route>
-  //   </Routes>
-  // );
+        {/* <Route path="/not-found" element={<NotFound />} /> */}
+        <Route path="*" element={<Navigate to="/not-found" replace />} />
+      </Route>
+    </Routes>
+  );
 }
 
 export default App;

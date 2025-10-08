@@ -41,6 +41,7 @@
     "fastify-multer": "^2.0.3",
     "fastify-static": "^4.7.0",
     "file-saver": "^2.0.5",
+    "framer-motion": "^12.23.22",
     "googleapis": "^144.0.0",
     "jszip": "^3.10.1",
     "jwt-decode": "^4.0.0",

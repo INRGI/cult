@@ -12,7 +12,7 @@ export class Seed {
   @Prop({ required: true })
   ownerId: string;
 
-  @Prop({ required: true })
+  @Prop({ required: true, enum: Isp, type: String })
   isp: Isp;
 }
 

@@ -71,25 +71,6 @@ const ReturnButton = styled(motion.button)`
     box-shadow: 0 0 40px rgba(140, 30, 255, 0.9);
     transform: translateY(-3px) scale(1.02);
   }
-
-  &::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: 10px;
-    box-shadow: 0 0 25px rgba(125, 26, 255, 0.6);
-    animation: pulse 2.5s infinite ease-in-out;
-  }
-
-  @keyframes pulse {
-    0%,
-    100% {
-      opacity: 0.4;
-    }
-    50% {
-      opacity: 1;
-    }
-  }
 `;
 
 const NotFound: React.FC = () => {

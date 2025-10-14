@@ -33,21 +33,12 @@ const Cultist = styled(motion.img)`
 
 const Title = styled(motion.h1)`
   margin: 0;
-  font-size: 4rem;
+  padding: 0;
+  font-size: 3rem;
   color: #e0caff;
   text-shadow: 0 0 25px #7d1aff;
   letter-spacing: 2px;
   text-align: center;
-`;
-
-const Subtitle = styled(motion.p)`
-  margin: 0;
-  color: #c3a1ff;
-  font-size: 1.3rem;
-  text-shadow: 0 0 10px rgba(125, 26, 255, 0.7);
-  font-style: italic;
-  text-align: center;
-  max-width: 400px;
 `;
 
 const ReturnButton = styled(motion.button)`
@@ -63,6 +54,7 @@ const ReturnButton = styled(motion.button)`
   text-transform: uppercase;
   overflow: hidden;
   transition: 0.4s;
+  font-weight: bold;
   box-shadow: 0 0 30px rgba(125, 26, 255, 0.4);
   font-family: "Cinzel", serif;
 
@@ -89,16 +81,8 @@ const NotFound: React.FC = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.5, duration: 0.8 }}
       >
-        404 – Lost Soul
+        404
       </Title>
-
-      <Subtitle
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1, duration: 1 }}
-      >
-        “Thou hast wandered beyond the Witch’s domain...”
-      </Subtitle>
 
       <ReturnButton
         onClick={() => (window.location.href = "/")}

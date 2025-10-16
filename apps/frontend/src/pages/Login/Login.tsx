@@ -3,10 +3,13 @@ import { AnimatePresence } from "framer-motion";
 import {
   Container,
   CultistSide,
-  GoogleButton,
   Quote,
   QuoteWrapper,
 } from "./Login.styled";
+import { useAuth } from "../../context/AuthContext";
+import { useNavigate } from "react-router-dom";
+import { GoogleLogin } from "@react-oauth/google";
+import axios from "axios";
 
 const Login: React.FC = () => {
   const quotes = [
@@ -18,13 +21,38 @@ const Login: React.FC = () => {
   ];
 
   const [currentQuote, setCurrentQuote] = useState(quotes[0]);
+  const { login, user } = useAuth();
+  const navigate = useNavigate();
 
+  
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentQuote(quotes[Math.floor(Math.random() * quotes.length)]);
     }, 5000);
     return () => clearInterval(interval);
   }, []);
+
+  
+  useEffect(() => {
+    if (user) navigate("/");
+  }, [user, navigate]);
+
+  
+  const handleGoogleSuccess = async (credentialResponse: any) => {
+    try {
+      const token = credentialResponse.credential;
+      const res = await axios.post("http://localhost:3000/api/auth/google", { token });
+
+      login(res.data.token, res.data.user);
+      navigate("/");
+    } catch (error: any) {
+      console.error("Access denied: only EPC Network members can log in.");
+    }
+  };
+
+  const handleGoogleError = () => {
+    console.error("Google login failed");
+  };
 
   return (
     <Container>
@@ -45,12 +73,16 @@ const Login: React.FC = () => {
         </QuoteWrapper>
       </CultistSide>
 
-      <GoogleButton
-        whileTap={{ scale: 0.96 }}
-        transition={{ type: "spring", stiffness: 300 }}
-      >
-        Join the Cult
-      </GoogleButton>
+      <div style={{ marginTop: "40px" }}>
+        <GoogleLogin
+          onSuccess={handleGoogleSuccess}
+          onError={handleGoogleError}
+          theme="filled_black"
+          shape="pill"
+          size="large"
+          text="signin_with"
+        />
+      </div>
     </Container>
   );
 };

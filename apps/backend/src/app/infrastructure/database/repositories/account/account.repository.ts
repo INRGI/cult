@@ -35,6 +35,10 @@ export class AccountRepository {
     return this.model.findById(id).exec();
   }
 
+  async findByEmail(email: string): Promise<Account | null> {
+    return this.model.findOne({ email }).exec();
+  }
+
   async update(id: string, data: Partial<Account>) {
     assertValidMongoId(id);
     return this.model.findByIdAndUpdate(id, data, { new: true }).exec();

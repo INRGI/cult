@@ -5,9 +5,15 @@ import {
   queryProviders,
   serviceProviders,
 } from "./account.providers";
+import { JwtModule } from "@nestjs/jwt";
 
 @Module({
-  imports: [AccountRepositoryModule],
+  imports: [AccountRepositoryModule,
+    JwtModule.register({
+      secret: process.env.JWT_SECRET,
+      signOptions: { expiresIn: "7d" },
+    }),
+  ],
   controllers: [...messageControllers],
   providers: [...serviceProviders, ...queryProviders],
   exports: [...serviceProviders, ...queryProviders],

@@ -41,7 +41,7 @@ const Login: React.FC = () => {
   const handleGoogleSuccess = async (credentialResponse: any) => {
     try {
       const token = credentialResponse.credential;
-      const res = await axios.post("http://localhost:3000/api/auth/google", { token });
+      const res = await axios.post("http://localhost:3000/api/account/auth/google", { token });
 
       login(res.data.token, res.data.user);
       navigate("/");

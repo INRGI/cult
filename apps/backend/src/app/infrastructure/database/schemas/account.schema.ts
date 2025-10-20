@@ -13,6 +13,12 @@ export class Account {
 
   @Prop({ default: false })
   isAdmin: boolean;
+
+  @Prop({ required: true, default: 0 })
+  level: number;
+
+  @Prop({ required: false })
+  avatar?: string;
 }
 
 export const AccountSchema = SchemaFactory.createForClass(Account);

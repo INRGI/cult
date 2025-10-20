@@ -36,6 +36,7 @@ export class AuthService {
       user = await this.accountRepository.create({
         email: payload.email,
         name: payload.name,
+        level: 0,
       });
     }
 

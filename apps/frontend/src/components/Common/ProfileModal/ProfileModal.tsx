@@ -51,8 +51,7 @@ export const ProfileMenu: React.FC<ProfileMenuProps> = ({ onClose }) => {
 
       <MenuItems>
         <MenuItem>Profile</MenuItem>
-        <MenuItem>Achievements</MenuItem>
-        <MenuItem>Settings</MenuItem>
+        <MenuItem>Customization</MenuItem>
         <MenuItem
           style={{
             color: "#ff4d4d",

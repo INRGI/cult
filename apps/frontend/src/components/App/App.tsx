@@ -4,6 +4,7 @@ import Layout from "../Layout/Layout";
 import ProtectedRoute from "../Common/ProtectedRoute/ProtectedRoute";
 
 const Home = lazy(() => import("../../pages/Home/Home"));
+const Profile = lazy(() => import("../../pages/Profile/Profile"));
 const Login = lazy(() => import("../../pages/Login/Login"));
 const NotFound = lazy(() => import("../../pages/NotFound/NotFound"));
 
@@ -20,6 +21,14 @@ export function App() {
           }
         />
 
+        <Route
+          path="profile/:id"
+          element={
+            <ProtectedRoute>
+              <Profile />
+            </ProtectedRoute>
+          }
+        />
         <Route path="login" element={<Login />} />
         <Route path="not-found" element={<NotFound />} />
 

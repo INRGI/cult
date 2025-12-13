@@ -45,7 +45,7 @@ const Login: React.FC = () => {
 
       login(res.data.token, res.data.user);
       navigate("/");
-    } catch (error: any) {
+    } catch {
       console.error("Access denied: only EPC Network members can log in.");
     }
   };

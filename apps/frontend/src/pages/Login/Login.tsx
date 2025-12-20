@@ -45,13 +45,9 @@ const Login: React.FC = () => {
 
       login(res.data.token, res.data.user);
       navigate("/");
-    } catch (error: any) {
+    } catch {
       console.error("Access denied: only EPC Network members can log in.");
     }
-  };
-
-  const handleGoogleError = () => {
-    console.error("Google login failed");
   };
 
   return (
@@ -76,7 +72,7 @@ const Login: React.FC = () => {
       <div style={{ marginTop: "40px" }}>
         <GoogleLogin
           onSuccess={handleGoogleSuccess}
-          onError={handleGoogleError}
+          onError={() => {return}}
           theme="filled_black"
           shape="pill"
           size="large"

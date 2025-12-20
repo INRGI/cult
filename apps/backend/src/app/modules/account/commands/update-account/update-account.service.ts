@@ -2,6 +2,7 @@ import { Injectable } from "@nestjs/common";
 import { AccountRepository } from "../../../../infrastructure/database/repositories/account/account.repository";
 import { UpdateAccountPayload } from "./update-account.payload";
 import { UpdateAccountProps } from "../../domain/types/account.types";
+import { NotFoundError } from "rxjs";
 
 @Injectable()
 export class UpdateAccountService {
@@ -13,7 +14,7 @@ export class UpdateAccountService {
     const Account = await this.accountRepository.findById(payload.id);
 
     if (!Account) {
-      throw new Error("Account not found");
+      throw new NotFoundError("Account not found");
     }
 
     const updatedAccount = await this.accountRepository.update(payload.id, {
